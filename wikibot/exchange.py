@@ -57,6 +57,7 @@ print(resj['updated'])
 """
 
 ##############fetch convert
+"""
 
 url = f'https://api.fastforex.io/convert?api_key={api_key}'
 
@@ -69,3 +70,17 @@ res = requests.get(url=url, headers=headers, params=querystring)
 resj = res.json()
 
 print(resj['base'])
+
+"""
+
+###########currencies
+
+url = f'https://api.fastforex.io/currencies?api_key={api_key}'
+
+headers = {"Accept":"application/json"}
+
+res = requests.get(url=url, headers=headers)
+
+resj = res.json()
+
+print(resj['currencies']['AED'])
