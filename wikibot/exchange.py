@@ -74,6 +74,7 @@ print(resj['base'])
 """
 
 ###########currencies
+"""
 
 url = f'https://api.fastforex.io/currencies?api_key={api_key}'
 
@@ -84,3 +85,16 @@ res = requests.get(url=url, headers=headers)
 resj = res.json()
 
 print(resj['currencies']['AED'])
+"""
+
+##############usage
+
+url = f'https://api.fastforex.io/usage?api_key={api_key}'
+
+headers = {"Accept":"application/json"}
+
+res = requests.get(url=url, headers=headers)
+
+resj = res.json()
+
+print(resj['usage'])
