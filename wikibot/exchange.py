@@ -41,7 +41,7 @@ print(resj['updated'])
 """
 
 ##################fetch multi
-
+"""
 url = f'https://api.fastforex.io/fetch-multi?api_key={api_key}'
 
 querystring = {"from":"USD","to":"UZS,EUR,RUB"}
@@ -54,5 +54,18 @@ resj = res.json()
 print(resj['base'])
 print(resj['results'])
 print(resj['updated'])
+"""
 
+##############fetch convert
 
+url = f'https://api.fastforex.io/convert?api_key={api_key}'
+
+querystring = {"from":"USD","to":"UZS","amount":"100"}
+
+headers = {"Accept":"application/json"}
+
+res = requests.get(url=url, headers=headers, params=querystring)
+
+resj = res.json()
+
+print(resj['base'])
